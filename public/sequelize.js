@@ -27,18 +27,12 @@ async function getUser() {
     }
 }
 
-// (async() => {
-//     const mb = document.getElementById("user-form");
-//     const mb2 = document.getElementById("signup-form");
-//     mb.addEventListener("submit", handler);
-//     mb2.addEventListener("submit", handler2);
-// })();
-
 // 사용자 등록 시
 document.getElementById('user-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = e.target.username.value;
     const psw = e.target.userpsw.value;
+    console.log('ss');
     //const saved = e.target.issave.checked;
     if (!name) {
       return alert('이름을 입력하세요');

@@ -1,10 +1,11 @@
 const express = require('express');
-const User = require('../models/user');
+// const User = require('../models/user');
 
 const router = express.Router();
-router.get('/', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
     try{
-        const users = await User.findAll();
+        console.log('로그아웃 라우터 실행');
+        // const users = await User.findAll();
         res.render('loggedin', { me: req.body.name });
     } catch (err) {
         console.log(err);

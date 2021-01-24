@@ -37,6 +37,7 @@ router.route('/')
                 }else{
                     console.log("로그인 성공되었습니다. ID: " + reqName);
                     res.render('/loggedin', {reqName});
+                    console.log("aa");
                     // 세션에 필요한 정보 설정
                 }
             })

@@ -23,7 +23,6 @@ router.route('/')
                 password: req.body.psw,
             });
             res.redirect(307, './index');
-            console.log('!!!');
         } catch (err) {
             console.error(err);
             next(err);
