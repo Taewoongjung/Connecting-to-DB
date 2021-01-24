@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div>
+      <form id="signup-form">
+        <fieldset>
+          <legend>사용자 등록</legend>
+          <div><input id="username" type="text" placeholder="아이디"></div>
+          <div><input id="userpsw" type="password" placeholder="비번"></div>
+          <div><input id="userpsw_re" type="password" placeholder="비번 재확인"></div>
+          <button type="submit">등록</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/sequelize2.js"></script>
+</html>

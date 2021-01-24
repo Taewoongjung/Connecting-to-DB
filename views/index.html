@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>시퀄라이즈 서버</title>
+    <style>
+      table { border: 1px solid black; border-collapse: collapse; }
+      table th, table td { border: 1px solid black; }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form id="user-form">
+        <fieldset>
+          <legend>사용자 등록</legend>
+          <div><input id="username" type="text" placeholder="아이디"></div>
+          <div><input id="userpsw" type="password" placeholder="비번"></div>
+          <button type="submit">로그인</button>
+          <a href="/signup">회원 가입</a>
+        </fieldset>
+      </form>
+    </div>
+    <br>
+    <table id="user-list">
+      <thead>
+      <tr>
+        <th>아이디</th>
+        <th>이름</th>
+        <th>비번</th>
+      </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.password}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/sequelize.js"></script>
+</html>
