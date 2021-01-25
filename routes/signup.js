@@ -22,7 +22,8 @@ router.route('/')
                 name: req.body.name,
                 password: req.body.psw,
             });
-            res.redirect(307, 'index');
+            res.redirect(307, '/index');
+            console.log('회원 생성 완료');
         } catch (err) {
             console.error(err);
             next(err);

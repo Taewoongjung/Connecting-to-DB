@@ -18,7 +18,6 @@ document.getElementById('signup-form').addEventListener('submit', async (e) => {
     try {
       console.log('@');
       await axios.post('/signup', { name, psw });
-      //getUser();
     } catch (err) {
       console.error(err);
     }
