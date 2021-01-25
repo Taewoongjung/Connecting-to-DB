@@ -1,5 +1,4 @@
 const express = require('express');
-const { REPL_MODE_SLOPPY } = require('repl');
 const User = require('../models/user');
 
 const router = express.Router();
@@ -14,7 +13,7 @@ router.route('/')
             next(err);
         }
     })
-    .post(async (req, res, next) => {
+    .post(async (req, res) => {
         const reqName = req.body.name;
         const reqPassword = req.body.psw;
         console.log("@@@");
@@ -40,6 +39,7 @@ router.route('/')
                     console.log("aa");
                     // 세션에 필요한 정보 설정
                 }
+
             })
             .catch(function (err) {
                 console.log('로그인 프로세스 오류 : ' + err);

@@ -1,6 +1,5 @@
 // 사용자 등록 시
-const bb = document.getElementById('signup-form')
-bb.addEventListener('submit', async (e) => {
+document.getElementById('signup-form').addEventListener('submit', async (e) => {
     console.log('!!');
     e.preventDefault();
     const name = e.target.username.value;
@@ -19,7 +18,7 @@ bb.addEventListener('submit', async (e) => {
     try {
       console.log('@');
       await axios.post('/signup', { name, psw });
-      getUser();
+      //getUser();
     } catch (err) {
       console.error(err);
     }

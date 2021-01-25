@@ -32,7 +32,6 @@ document.getElementById('user-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = e.target.username.value;
     const psw = e.target.userpsw.value;
-    console.log('ss');
     //const saved = e.target.issave.checked;
     if (!name) {
       return alert('이름을 입력하세요');
@@ -42,6 +41,7 @@ document.getElementById('user-form').addEventListener('submit', async (e) => {
     }
     try {
       await axios.post('/users', { name, psw });
+      console.log('등록하기');
       getUser();
     } catch (err) {
       console.error(err);

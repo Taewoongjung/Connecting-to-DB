@@ -10,12 +10,8 @@ router.route('/')
             res.render('index', { users });
         } catch (err) {
             console.log(err);
-            nexr(err);
+            next(err);
         }
-    })
-    // .post(async (req, res, next) => {
-    //     res.render('index', { users });
-    // });
-
-
+    });
+    
 module.exports = router;
