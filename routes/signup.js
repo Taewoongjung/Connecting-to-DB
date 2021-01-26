@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.get('/', async (req, res, next) => {
     try{
-        console.log('!!')
         res.sendFile(path.join(__dirname, '../views/signup.html'));
     } catch (err) {
         console.log(err);

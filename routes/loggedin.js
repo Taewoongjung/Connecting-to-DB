@@ -23,12 +23,10 @@ router.post('/', async (req, res, next) => {
             res.json(data);
 
         } else{
-            console.log("aa@@");
             console.log("로그인 성공했습니다. ID: " + id);
             res.render('loggedin', {me: id});
             // 세션에 필요한 정보 설정
         }
-        //res.send('hi');
     }
     catch(err){
         console.error(err);
@@ -38,7 +36,6 @@ router.post('/', async (req, res, next) => {
 
 router.get('/home', async (req, res, next) => {
     try{
-        console.log('good');
         res.redirect('/');
     } catch(err){
         console.error(err);
