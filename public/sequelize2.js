@@ -38,14 +38,9 @@ window.onload = () => {
   }
 }
 
-
 const signup = document.getElementById('signup-form');
-
 const signup_btn = document.getElementById('signup-btn');
-
 signup_btn.addEventListener('click', () => {
   signup.setAttribute('action', '/signup/check-signup');
   signup.setAttribute('method', 'POST');
 });
-
-

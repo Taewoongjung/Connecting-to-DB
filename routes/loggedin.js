@@ -35,16 +35,15 @@ router.post('/', async (req, res, next) => {
         next(err);
     }
 });
-// router.route('/')
-//     .get(async (req, res, next) => {
-//         try{
-//             console.log('로그인 라우터 실행');
-//             // const users = await User.findAll();
-//             res.render('loggedin', { me: req.body.name });
-//         } catch (err) {
-//             console.log(err);
-//             next(err);
-//         }
-//     });
+
+router.get('/home', async (req, res, next) => {
+    try{
+        console.log('good');
+        res.redirect('/');
+    } catch(err){
+        console.error(err);
+        next(err);
+    }
+});
 
 module.exports = router;
