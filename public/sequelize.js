@@ -14,6 +14,6 @@ window.onload = () => {
 const login = document.getElementById('user-form');
 const login_btn = document.getElementById('login-btn');
 login_btn.addEventListener('click', () => {
-  login.setAttribute('action', '/loggedin');
+  login.setAttribute('action', '/users');
   login.setAttribute('method', 'POST');
 });

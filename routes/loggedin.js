@@ -25,6 +25,8 @@ router.post('/', async (req, res, next) => {
         } else{
             console.log("로그인 성공했습니다. ID: " + id);
             res.render('loggedin', {me: id});
+            console.log('cookie >>');
+            console.log(req.cookies);
             // 세션에 필요한 정보 설정
         }
     }
@@ -36,7 +38,22 @@ router.post('/', async (req, res, next) => {
 
 router.get('/home', async (req, res, next) => {
     try{
-        res.redirect('/');
+        if(req.session && req.session.user) {
+            console.log('로그아웃 처리');
+            req.session.destroy(
+                function (err) {
+                    if (err){
+                        console.log('세션 삭제시 에러');
+                        return;
+                    }
+                res.clearCookie('cookie-session');
+                console.log(req.session);
+                console.log(req.cookies);
+                console.log('세션, 쿠키 삭제 성공');
+                res.redirect('/');
+                }
+            )
+        }
     } catch(err){
         console.error(err);
         next(err);
